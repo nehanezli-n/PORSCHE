@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="p-shadow-jet-black" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.95"/>
+      <stop offset="80%" stop-color="#000000" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="p-body-jet-black" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2D3036"/>
+      <stop offset="30%" stop-color="#141518"/>
+      <stop offset="70%" stop-color="#141518"/>
+      <stop offset="100%" stop-color="#08080A"/>
+    </linearGradient>
+    <linearGradient id="p-glass-jet-black" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" stop-opacity="0.95"/>
+      <stop offset="50%" stop-color="#1f2937" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0b0f17" stop-opacity="0.98"/>
+    </linearGradient>
+    <radialGradient id="p-wheel-jet-black" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2B2B2B"/>
+      <stop offset="80%" stop-color="#121212"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1000" height="500" fill="#070707"/>
+  <line x1="50" y1="380" x2="950" y2="380" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <ellipse cx="500" cy="382" rx="430" ry="35" fill="url(#p-shadow-jet-black)" filter="blur(10px)"/>
+
+  <g id="porsche-profile" transform="translate(500, 270)">
+    <path d="
+      M -360,70
+      C -340,68 -320,60 -300,30
+      C -260,-10 -210,-45 -140,-58
+      C -60,-65 30,-62 110,-40
+      C 180,-20 240,15 290,50
+      C 320,65 340,68 350,70
+      L 345,90
+      C 310,95 290,95 240,95
+      C 230,55 180,55 170,95
+      L -140,95
+      C -150,55 -200,55 -210,95
+      L -355,90 Z"
+      fill="url(#p-body-jet-black)"
+      stroke="#08080A"
+      stroke-width="1.5"
+    />
+
+    <path d="
+      M -125,-54
+      C -65,-105 20,-110 95,-75
+      C 135,-55 170,-20 200,5
+      L -125,-54 Z"
+      fill="url(#p-glass-jet-black)"
+      stroke="#1A1A1A"
+      stroke-width="2"
+    />
+    <path d="M -130,-55 C -65,-110 20,-115 105,-78" stroke="#1F1F1F" stroke-width="4" fill="none"/>
+
+    <path d="M 260,-40 C 275,-90 280,-110 295,-125 L 345,-115 C 330,-90 320,-50 310,20 Z" fill="#181818" stroke="#0C0C0C" stroke-width="1.5"/>
+    <path d="M 265,-128 L 360,-115 L 358,-105 L 263,-118 Z" fill="#2A2C33" stroke="#111" stroke-width="1"/>
+
+    <g transform="translate(-175, 95)">
+      <circle cx="0" cy="0" r="52" fill="#0D0D0D" stroke="#262626" stroke-width="2"/>
+      <circle cx="0" cy="0" r="42" fill="url(#p-wheel-jet-black)"/>
+      <circle cx="0" cy="0" r="34" fill="none" stroke="#3D3D3D" stroke-width="3" stroke-dasharray="6 6"/>
+      <rect x="-16" y="-26" width="12" height="20" rx="2" fill="#FFE033"/>
+      <circle cx="0" cy="0" r="7" fill="#C5A059"/>
+    </g>
+
+    <g transform="translate(205, 95)">
+      <circle cx="0" cy="0" r="55" fill="#0D0D0D" stroke="#262626" stroke-width="2"/>
+      <circle cx="0" cy="0" r="44" fill="url(#p-wheel-jet-black)"/>
+      <circle cx="0" cy="0" r="36" fill="none" stroke="#3D3D3D" stroke-width="3" stroke-dasharray="6 6"/>
+      <rect x="-18" y="-28" width="12" height="22" rx="2" fill="#FFE033"/>
+      <circle cx="0" cy="0" r="7" fill="#C5A059"/>
+    </g>
+
+    <rect x="-362" y="88" width="80" height="6" rx="2" fill="#161616"/>
+    <rect x="-130" y="92" width="290" height="5" rx="1" fill="#161616"/>
+
+    <text x="-80" y="84" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="900" font-style="italic" fill="#FFFFFF" fill-opacity="0.2" letter-spacing="4">GT3 RS</text>
+
+    <polygon points="-335,42 -305,25 -300,32 -330,48" fill="#E2F0FF" fill-opacity="0.85" filter="drop-shadow(0 0 6px #66A3FF)"/>
+    <rect x="338" y="58" width="12" height="4" rx="1" fill="#D5001C" filter="drop-shadow(0 0 6px #D5001C)"/>
+  </g>
+
+  <g font-family="Space Grotesk, monospace" font-size="8.5" fill="#666666" letter-spacing="1.5">
+    <text x="60" y="455">PORSCHE 911 GT3 RS · STUDIO PROFILE VIEW</text>
+    <text x="60" y="472">FINISH: JET BLACK METALLIC (METALLIC)</text>
+    <text x="820" y="455" text-anchor="end">AERODYNAMICS: ACTIVE DRS · 2-STAGE REAR WING</text>
+    <text x="820" y="472" text-anchor="end">DRIVE: REAR-WHEEL DRIVE · 7-SPEED DUAL-CLUTCH (PDK)</text>
+  </g>
+</svg>

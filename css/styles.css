@@ -1,0 +1,487 @@
+/* ==========================================================================
+   PORSCHE AUTOMOTIVE LUXURY DESIGN SYSTEM — ELEVATED ATELIER EDITION
+   Art Direction: Dark Cinematic, Precision Engineering, Ultra-Luxury Editorial
+   ========================================================================== */
+
+:root {
+  --bg-main: #050505;
+  --bg-secondary: #0A0A0A;
+  --bg-surface: #121212;
+  --bg-surface-elevated: #181818;
+  --text-main: #F5F5F2;
+  --text-muted: #999999;
+  --text-subtle: #555555;
+  --accent-red: #D5001C;
+  --accent-red-glow: rgba(213, 0, 28, 0.4);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.18);
+  --font-headline: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base Reset & Smooth Dynamics */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  overflow-x: hidden;
+  line-height: 1.6;
+  position: relative;
+}
+
+/* Subtle High-End Studio Ambient Cursor Spotlight */
+#ambient-cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.035) 0%, rgba(213, 0, 28, 0.015) 35%, transparent 70%);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+::-webkit-scrollbar-thumb {
+  background: #202020;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-red);
+}
+
+/* Typography Utilities */
+.font-headline { font-family: var(--font-headline); }
+.font-body { font-family: var(--font-body); }
+.font-mono { font-family: var(--font-mono); }
+
+.tracking-ultra-wide {
+  letter-spacing: 0.28em;
+}
+
+.tracking-luxury {
+  letter-spacing: 0.18em;
+}
+
+.tracking-tight-hero {
+  letter-spacing: -0.04em;
+}
+
+/* Ghost Background Watermark Typography */
+.ghost-watermark {
+  font-family: var(--font-headline);
+  font-weight: 900;
+  font-size: clamp(4rem, 15vw, 16rem);
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.04);
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  white-space: nowrap;
+  text-transform: uppercase;
+}
+
+/* Hairline Gradient Dividers */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.15) 80%, transparent);
+}
+
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+/* Glass & Scrolled Header */
+.header-scrolled {
+  background: rgba(6, 6, 6, 0.94) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Luxury Interactive Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: var(--text-main);
+  color: #050505;
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border: 1px solid var(--text-main);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-red);
+  color: #FFFFFF;
+  border-color: var(--accent-red);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--accent-red-glow);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background-color: transparent;
+  color: var(--text-main);
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  border: 1px solid var(--border-medium);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-headline);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-main);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+  padding-bottom: 3px;
+}
+
+.btn-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--accent-red);
+  transition: width 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #FFFFFF;
+}
+
+.btn-link:hover::after {
+  width: 100%;
+}
+
+/* Nav Link Luxury Underline */
+.nav-link {
+  font-family: var(--font-headline);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--text-main);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent-red);
+  transform: translateX(-50%);
+  transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Shift Light LEDs in Digital Tachometer */
+.shift-led {
+  width: 12px;
+  height: 6px;
+  border-radius: 1px;
+  background-color: #222222;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.shift-led.green.active {
+  background-color: #00FF66;
+  box-shadow: 0 0 10px #00FF66;
+}
+
+.shift-led.amber.active {
+  background-color: #FFAA00;
+  box-shadow: 0 0 10px #FFAA00;
+}
+
+.shift-led.red.active {
+  background-color: #FF0033;
+  box-shadow: 0 0 12px #FF0033;
+  animation: flash-red 0.2s infinite alternate;
+}
+
+@keyframes flash-red {
+  0% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+/* G-Force Friction Circle */
+.g-friction-circle {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.02) 0%, transparent 70%);
+}
+
+.g-ball {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-red);
+  box-shadow: 0 0 8px var(--accent-red);
+  transform: translate(-50%, -50%);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Swatch Interactive Halo */
+.swatch-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 3px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.swatch-btn:hover {
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: scale(1.08);
+}
+
+.swatch-btn.active {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 20px var(--accent-red-glow);
+  transform: scale(1.14);
+}
+
+.swatch-color-circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.25), inset 0 -3px 6px rgba(0, 0, 0, 0.7);
+}
+
+/* Configurator Views */
+.configurator-view-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.configurator-view-image.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+/* Digital Dashboard Telemetry */
+.dash-digit {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.dash-unit {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.dash-label {
+  font-family: var(--font-headline);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--text-subtle);
+}
+
+/* Luxury Input Fields for Private Viewing */
+.luxury-input {
+  width: 100%;
+  background-color: #0c0c0c;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-main);
+  padding: 1.1rem 1.4rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  border-radius: 0;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  outline: none;
+}
+
+.luxury-input:focus {
+  border-color: var(--accent-red);
+  background-color: #121212;
+  box-shadow: 0 0 16px rgba(213, 0, 28, 0.2);
+}
+
+.luxury-input::placeholder {
+  color: #4a4a4a;
+  font-size: 0.875rem;
+}
+
+.luxury-input.error {
+  border-color: #FF334B;
+  background-color: rgba(255, 51, 75, 0.05);
+}
+
+.input-label {
+  display: block;
+  font-family: var(--font-headline);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Editorial Card Elevated Hover */
+.editorial-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+}
+
+.editorial-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+}
+
+.editorial-card:hover .card-car-img {
+  transform: scale(1.04);
+}
+
+.card-car-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Pulsing Indicator */
+.pulse-indicator {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-red);
+  box-shadow: 0 0 8px var(--accent-red);
+  animation: pulse-red 2s infinite;
+}
+
+@keyframes pulse-red {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(213, 0, 28, 0.7); }
+  70% { transform: scale(1.1); box-shadow: 0 0 0 8px rgba(213, 0, 28, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(213, 0, 28, 0); }
+}
+
+/* Sound Indicator Waves */
+.sound-bar {
+  display: inline-block;
+  width: 2px;
+  background-color: var(--text-main);
+  border-radius: 1px;
+  transition: height 0.2s ease;
+}
+
+.sound-playing .sound-bar:nth-child(1) { animation: sound-bounce 0.8s ease infinite alternate; }
+.sound-playing .sound-bar:nth-child(2) { animation: sound-bounce 1.1s ease 0.2s infinite alternate; }
+.sound-playing .sound-bar:nth-child(3) { animation: sound-bounce 0.9s ease 0.4s infinite alternate; }
+
+@keyframes sound-bounce {
+  0% { height: 4px; }
+  100% { height: 16px; }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

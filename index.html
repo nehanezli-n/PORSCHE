@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth bg-[#050505] text-[#F5F5F2]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porsche · Performance, Refined | Official Atelier Experience</title>
+  <meta name="description" content="Explore the bespoke luxury sports car collection from Porsche. Discover the 911 GT3 RS, Taycan Turbo GT, precision telemetry, interactive colour configurator, and private viewing.">
+
+  <!-- Favicon / Porsche Crest Styling -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23050505'/><polygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='%23D5001C' stroke-width='2'/><text x='16' y='21' font-family='sans-serif' font-size='13' font-weight='bold' fill='%23FFFFFF' text-anchor='middle'>P</text></svg>">
+
+  <!-- Google Fonts: Space Grotesk (Headlines) & Manrope (Body) & JetBrains Mono (Telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brandBlack: '#050505',
+            brandCharcoal: '#0A0A0A',
+            brandSurface: '#121212',
+            brandSurfaceElevated: '#181818',
+            brandWarmWhite: '#F5F5F2',
+            brandMuted: '#999999',
+            porscheRed: '#D5001C'
+          },
+          fontFamily: {
+            headline: ['Space Grotesk', 'sans-serif'],
+            body: ['Manrope', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Bespoke Luxury Automotive Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body class="bg-[#050505] text-[#F5F5F2] antialiased selection:bg-[#D5001C] selection:text-white">
+
+  <!-- Subtle Studio Ambient Cursor Spotlight -->
+  <div id="ambient-cursor-light"></div>
+
+  <!-- =====================================================================
+       1. HEADER / NAVIGATION
+       Transparent over hero, transitioning to subtle dark glass on scroll
+       ===================================================================== -->
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent py-6 px-6 md:px-12">
+    <div class="max-w-[1720px] mx-auto flex items-center justify-between">
+      
+      <!-- Brand Wordmark Logo -->
+      <a href="#hero" class="group flex items-center gap-3 text-decoration-none">
+        <span class="font-headline text-lg md:text-xl font-bold tracking-[0.28em] text-[#F5F5F2] uppercase transition-colors group-hover:text-white">
+          PORSCHE
+        </span>
+        <span class="hidden sm:inline-block w-px h-3.5 bg-white/20"></span>
+        <span class="hidden sm:inline-block text-[10px] font-mono tracking-widest text-white/50 uppercase">
+          Zuffenhausen · Atelier
+        </span>
+      </a>
+
+      <!-- Desktop Minimal Navigation -->
+      <nav class="hidden lg:flex items-center gap-8 xl:gap-10">
+        <a href="#collection" class="nav-link">Models</a>
+        <a href="#drift" class="nav-link">Drift Experience</a>
+        <a href="#motorsport" class="nav-link">Motorsport</a>
+        <a href="#telemetry" class="nav-link">Telemetry</a>
+        <a href="#configurator" class="nav-link">Configurator</a>
+        <a href="#craftsmanship" class="nav-link">Craftsmanship</a>
+        <a href="#private-viewing" class="nav-link">Private Viewing</a>
+      </nav>
+
+      <!-- Header Quick Actions -->
+      <div class="flex items-center gap-4">
+        
+        <!-- Acoustic Engine Sound Toggle -->
+        <button id="header-sound-btn" class="hidden sm:inline-flex items-center gap-2.5 px-3.5 py-1.5 text-[10px] font-headline font-bold uppercase tracking-widest text-[#A3A3A3] hover:text-white border border-white/10 hover:border-white/30 transition-all bg-black/40 backdrop-blur-md" title="Toggle Flat-Six Boxer Sound Engine">
+          <div class="flex items-center gap-0.5 h-3">
+            <span class="sound-bar h-2"></span>
+            <span class="sound-bar h-3.5"></span>
+            <span class="sound-bar h-1.5"></span>
+          </div>
+          <span id="sound-status-text">FLAT-SIX ACOUSTICS</span>
+        </button>
+
+        <!-- Understated Private Viewing CTA -->
+        <a href="#private-viewing" class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 text-xs font-headline font-bold uppercase tracking-widest bg-white/5 hover:bg-white text-white hover:text-black border border-white/20 hover:border-white transition-all backdrop-blur-md">
+          <span>Book Viewing</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-btn" class="lg:hidden p-2 text-white/80 hover:text-white focus:outline-none" aria-label="Open Navigation Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-menu-drawer" class="fixed inset-0 z-50 bg-[#080808]/95 backdrop-blur-2xl transform translate-x-full transition-transform duration-500 ease-out flex flex-col justify-between p-8 md:p-12 lg:hidden">
+    <div>
+      <div class="flex items-center justify-between pb-8 border-b border-white/10">
+        <span class="font-headline text-lg font-bold tracking-[0.28em] text-white uppercase">PORSCHE</span>
+        <button id="mobile-menu-close" class="p-2 text-white/60 hover:text-white" aria-label="Close Menu">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <nav class="mt-10 flex flex-col gap-6">
+        <a href="#collection" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-white/80 hover:text-white">01. Models</a>
+        <a href="#drift" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-white/80 hover:text-white">02. Drift Experience (GT3 RS)</a>
+        <a href="#motorsport" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-white/80 hover:text-white">03. Motorsport Heritage</a>
+        <a href="#telemetry" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-white/80 hover:text-white">04. Telemetry Instrument Cluster</a>
+        <a href="#configurator" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-white/80 hover:text-white">05. Colour Configurator</a>
+        <a href="#craftsmanship" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-white/80 hover:text-white">06. Craftsmanship Details</a>
+        <a href="#private-viewing" class="mobile-nav-link font-headline text-2xl font-bold tracking-tight text-[#D5001C]">07. Request Private Viewing</a>
+      </nav>
+    </div>
+
+    <div class="pt-8 border-t border-white/10 flex flex-col gap-4 text-xs font-mono text-white/50">
+      <p>DR. ING. H.C. F. PORSCHE AG · STUTTGART-ZUFFENHAUSEN</p>
+      <p>CONCIERGE VIP DESK: +49 (0) 711 911-0</p>
+    </div>
+  </div>
+
+
+  <!-- =====================================================================
+       2. CINEMATIC HERO SECTION
+       Composition & visual mood inspired by Reference 2:
+       Dramatic low camera angle, controlled studio lighting, deep shadows,
+       refined typography, and generous negative space.
+       ===================================================================== -->
+  <section id="hero" class="relative min-h-screen w-full flex flex-col justify-between pt-36 pb-14 px-6 md:px-12 overflow-hidden bg-[#050505]">
+    
+    <!-- Ghosted Watermark Typography in Background -->
+    <div class="ghost-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-40">
+      911 GT3 RS
+    </div>
+
+    <!-- Hero Background Image & Lighting Treatment with 3D Tilt -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div id="hero-car-media" class="w-full h-full transition-transform duration-700 ease-out will-change-transform">
+        <img 
+          src="assets/hero-porsche.jpg" 
+          alt="Porsche Sports Car in Dark Studio" 
+          class="w-full h-full object-cover object-center scale-105" 
+        />
+      </div>
+      <!-- Dramatic Studio Lighting Masks & Vignette -->
+      <div class="absolute inset-0 hero-vignette"></div>
+      <div class="absolute inset-0 hero-gradient-top"></div>
+      <div class="absolute inset-0 hero-gradient-bottom"></div>
+    </div>
+
+    <!-- Top Label -->
+    <div class="relative z-10 max-w-[1720px] mx-auto w-full pt-4">
+      <div class="inline-flex items-center gap-3 px-3.5 py-1.5 bg-black/60 backdrop-blur-md border border-white/15 text-[10px] md:text-xs font-headline font-bold tracking-[0.24em] uppercase text-white/90">
+        <span class="pulse-indicator"></span>
+        <span>PORSCHE · PERFORMANCE, REFINED</span>
+        <span class="text-white/30">|</span>
+        <span class="text-[#D5001C] font-mono">TYPE 992.2</span>
+      </div>
+    </div>
+
+    <!-- Center Editorial Headline & Supporting Copy -->
+    <div class="relative z-10 max-w-[1720px] mx-auto w-full my-auto py-12 md:py-24">
+      <div class="max-w-3xl">
+        <span class="text-[11px] font-mono uppercase tracking-[0.28em] text-[#D5001C] block mb-4">
+          ZUFFENHAUSEN HERITAGE · 2026 COLLECTION
+        </span>
+        <h1 class="font-headline text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight-hero leading-[0.96] text-[#F5F5F2]">
+          Built for the moments that stay with you.
+        </h1>
+        <p class="mt-6 md:mt-8 text-base sm:text-lg md:text-xl text-[#A3A3A3] font-body font-light leading-relaxed max-w-xl">
+          Precision engineering. Unmistakable design. Performance that moves beyond the ordinary.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="mt-10 md:mt-14 flex flex-wrap items-center gap-4 sm:gap-6">
+          <a href="#collection" class="btn-primary">
+            <span>Explore the Collection</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+          <a href="#configurator" class="btn-secondary">
+            <span>Discover Porsche</span>
+          </a>
+          
+          <!-- Acoustic Engine Start Button -->
+          <button id="hero-sound-btn" class="inline-flex items-center gap-2.5 text-xs font-headline font-bold uppercase tracking-widest text-[#A3A3A3] hover:text-white px-5 py-3 transition-colors border border-transparent hover:border-white/10 bg-black/30 backdrop-blur-sm">
+            <i data-lucide="volume-2" class="w-4 h-4 text-[#D5001C]"></i>
+            <span>Start Flat-Six Engine</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Telemetry HUD Strip -->
+    <div class="relative z-10 max-w-[1720px] mx-auto w-full pt-8 border-t border-white/10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+        <div>
+          <span class="block text-[9px] font-headline uppercase tracking-widest text-[#666666]">FEATURED MODEL</span>
+          <span class="block text-sm md:text-base font-headline font-bold text-[#F5F5F2] mt-1">911 GT3 RS (992)</span>
+        </div>
+        <div>
+          <span class="block text-[9px] font-headline uppercase tracking-widest text-[#666666]">ACCELERATION 0–100 KM/H</span>
+          <span class="block text-sm md:text-base font-headline font-bold text-[#F5F5F2] mt-1">3.2 Seconds</span>
+        </div>
+        <div class="hidden md:block">
+          <span class="block text-[9px] font-headline uppercase tracking-widest text-[#666666]">OUTPUT (DIN)</span>
+          <span class="block text-sm md:text-base font-headline font-bold text-[#F5F5F2] mt-1">525 PS (386 kW)</span>
+        </div>
+        <div class="hidden md:block">
+          <span class="block text-[9px] font-headline uppercase tracking-widest text-[#666666]">DRIVE ARCHITECTURE</span>
+          <span class="block text-sm md:text-base font-headline font-bold text-[#F5F5F2] mt-1">4.0L High-Rev Boxer · 9,000 RPM</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================================
+       3. IMMERSIVE DRIFT EXPERIENCE (PORSCHE 911 GT3 RS)
+       Powered by the generated photorealistic 911 GT3 RS drifting visual:
+       Sideways drift across black, wet reflective asphalt, realistic water spray,
+       directional lighting, interactive angle modulation, G-Meter & live telemetry.
+       ===================================================================== -->
+  <section id="drift" class="relative min-h-screen w-full bg-[#050505] flex flex-col justify-between py-24 px-6 md:px-12 overflow-hidden border-t border-b border-white/10">
+    
+    <!-- Ghosted Background Text -->
+    <div class="ghost-watermark top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25">
+      DRIFT DYNAMICS
+    </div>
+
+    <div class="max-w-[1720px] mx-auto w-full relative z-20">
+      <!-- Section Label & Headline -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+        <div>
+          <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-2">
+            02 // TRACK DYNAMICS & COUNTER-STEER
+          </span>
+          <h2 class="font-headline text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#F5F5F2]">
+            Control, at the edge of everything.
+          </h2>
+        </div>
+        <p class="text-sm md:text-base text-[#A3A3A3] font-body max-w-md leading-relaxed">
+          Every movement is engineered. Every response is intentional. The 911 GT3 RS counter-steers across wet reflective asphalt with unyielding stability and aerodynamic precision.
+        </p>
+      </div>
+    </div>
+
+    <!-- Drift Stage Container with Generated GT3 RS Visual -->
+    <div id="drift-section" class="relative w-full my-8 min-h-[540px] md:min-h-[720px] flex items-center justify-center overflow-hidden">
+      
+      <!-- Wet Track Ground & Light Glow -->
+      <div class="absolute inset-0 bg-gradient-to-b from-[#050505] via-[#090909] to-[#050505]"></div>
+      <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black via-[#070707] to-transparent opacity-95"></div>
+      
+      <!-- Directional Headlight Cone Reflection onto Wet Ground -->
+      <div class="absolute bottom-12 left-1/4 w-[700px] h-[220px] bg-gradient-to-r from-blue-400/10 via-white/5 to-transparent blur-3xl transform -rotate-6 pointer-events-none"></div>
+
+      <!-- Water Spray & Fine Tyre Mist Particle Canvas -->
+      <canvas id="drift-spray-canvas" class="z-10"></canvas>
+
+      <!-- Sideways Drifting Porsche 911 GT3 RS Element -->
+      <div id="drift-car-wrapper" class="relative z-10 w-full max-w-6xl transition-transform duration-300 ease-out">
+        <div class="relative w-full aspect-[16/9] flex items-center justify-center">
+          <img 
+            id="drift-car-image"
+            src="assets/drift-gt3rs.jpg" 
+            alt="Porsche 911 GT3 RS Drifting at High Speed Across Wet Night Track" 
+            class="w-full h-full object-cover object-center filter drop-shadow-[0_30px_60px_rgba(0,0,0,0.95)] transition-transform duration-300"
+          />
+          <!-- Wet Asphalt Specular Ground Mirror Reflection -->
+          <div class="absolute -bottom-10 left-0 w-full h-28 bg-gradient-to-t from-[#050505] to-transparent pointer-events-none"></div>
+        </div>
+      </div>
+
+      <!-- Live Dynamic Telemetry & G-Force Compass Overlay -->
+      <div class="absolute bottom-8 left-6 md:left-12 z-20 flex flex-wrap items-center gap-4">
+        
+        <!-- Interactive G-Force Compass Friction Circle -->
+        <div class="bg-black/80 backdrop-blur-md border border-white/15 p-3 flex items-center gap-3">
+          <div class="g-friction-circle">
+            <div id="drift-g-ball" class="g-ball" style="left: 60px; top: 32px;"></div>
+          </div>
+          <div>
+            <span class="block text-[8px] font-mono text-[#666666] tracking-wider uppercase">FRICTION CIRCLE</span>
+            <span id="drift-lateralg-val" class="font-headline text-sm md:text-base font-bold text-white">1.48 G</span>
+            <span class="block text-[9px] font-mono text-[#D5001C]">LATERAL LOAD</span>
+          </div>
+        </div>
+
+        <div class="bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5">
+          <span class="block text-[8px] font-mono text-[#666666] tracking-wider uppercase">YAW COUNTER-STEER</span>
+          <span id="drift-yaw-val" class="font-headline text-sm md:text-base font-bold text-white">+38.5°</span>
+        </div>
+
+        <div class="bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5">
+          <span class="block text-[8px] font-mono text-[#666666] tracking-wider uppercase">REAR AXLE SLIP</span>
+          <span id="drift-slip-val" class="font-headline text-sm md:text-base font-bold text-white">21.2°</span>
+        </div>
+
+        <div class="hidden sm:block bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5">
+          <span class="block text-[8px] font-mono text-[#666666] tracking-wider uppercase">ENGINE SPEED</span>
+          <span id="drift-rpm-val" class="font-headline text-sm md:text-base font-bold text-[#D5001C]">7,400 RPM</span>
+        </div>
+
+        <div class="hidden md:block bg-black/80 backdrop-blur-md border border-white/10 px-4 py-2.5">
+          <span class="block text-[8px] font-mono text-[#666666] tracking-wider uppercase">THROTTLE</span>
+          <span id="drift-throttle-val" class="font-headline text-sm md:text-base font-bold text-white">84%</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Drift Modulation Control Bar -->
+    <div class="max-w-[1720px] mx-auto w-full relative z-20 pt-6">
+      <div class="bg-[#0c0c0c] border border-white/15 p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-[#D5001C]/10 border border-[#D5001C]/40 flex items-center justify-center text-[#D5001C]">
+            <i data-lucide="sliders" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-headline text-sm font-bold uppercase tracking-wider text-white">Interactive Drift Modulation</span>
+            <p class="text-xs text-[#A3A3A3]">Modulate counter-steer slip angle, throttle load, and dynamic water spray physics in real-time</p>
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 flex items-center gap-4">
+          <span class="text-[10px] font-mono text-white/50 uppercase tracking-widest whitespace-nowrap">Grip Entry (8°)</span>
+          <input 
+            type="range" 
+            id="drift-angle-slider" 
+            min="0" 
+            max="100" 
+            value="65" 
+            class="w-full h-1.5 bg-white/20 rounded-none appearance-none cursor-pointer accent-[#D5001C]"
+            aria-label="Modulate drift counter-steer angle"
+          />
+          <span class="text-[10px] font-mono text-[#D5001C] uppercase tracking-widest whitespace-nowrap">Apex Slip (45°)</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================================
+       4. PORSCHE COLLECTION SECTION
+       Refined editorial showcase featuring 6 authentic Porsche sports cars
+       with filter tabs, verified specs, audio triggers, and deep discovery modal.
+       ===================================================================== -->
+  <section id="collection" class="py-32 px-6 md:px-12 bg-[#050505] relative">
+    
+    <!-- Ghosted Watermark -->
+    <div class="ghost-watermark top-24 left-1/2 -translate-x-1/2 opacity-30">
+      THE COLLECTION
+    </div>
+
+    <div class="max-w-[1720px] mx-auto relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8 pb-14 border-b border-white/10">
+        <div>
+          <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-2">
+            03 // THE PORSCHE MODEL FLEET
+          </span>
+          <h2 class="font-headline text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#F5F5F2]">
+            Engineering across every discipline.
+          </h2>
+        </div>
+        
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap items-center gap-2.5">
+          <button class="filter-tab-btn active px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white text-white bg-white/10 transition-all" data-filter="all">
+            All Models (6)
+          </button>
+          <button class="filter-tab-btn px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white/10 text-[#A3A3A3] hover:text-white hover:border-white/30 transition-all" data-filter="gt">
+            GT & Motorsport
+          </button>
+          <button class="filter-tab-btn px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white/10 text-[#A3A3A3] hover:text-white hover:border-white/30 transition-all" data-filter="electric">
+            Pure Electric
+          </button>
+          <button class="filter-tab-btn px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white/10 text-[#A3A3A3] hover:text-white hover:border-white/30 transition-all" data-filter="saloon">
+            Sports Saloon & SUV
+          </button>
+        </div>
+      </div>
+
+      <!-- Editorial Vehicle Grid -->
+      <div id="collection-grid" class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <!-- Rendered dynamically by collection.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Model Discovery Detail Modal -->
+  <div id="model-detail-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 md:p-8">
+    <div id="modal-backdrop" class="absolute inset-0 bg-black/92 backdrop-blur-2xl"></div>
+    
+    <div class="relative z-10 w-full max-w-4xl bg-[#0e0e0e] border border-white/20 overflow-hidden max-h-[90vh] flex flex-col shadow-2xl">
+      <!-- Modal Header Bar -->
+      <div class="p-6 md:p-8 border-b border-white/10 flex items-center justify-between bg-[#121212]">
+        <div>
+          <span id="modal-badge" class="text-[10px] font-mono tracking-widest uppercase text-[#D5001C]">GT & Motorsport</span>
+          <h3 id="modal-title" class="font-headline text-2xl md:text-3xl font-bold text-white mt-1">Porsche 911 GT3 RS</h3>
+          <span id="modal-series" class="text-xs font-mono text-[#777777]">Type 992</span>
+        </div>
+        <button id="modal-close-btn" class="p-2 text-white/60 hover:text-white" aria-label="Close Modal">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-6 md:p-8 overflow-y-auto space-y-8">
+        <div class="w-full aspect-[16/9] bg-black overflow-hidden relative border border-white/10">
+          <img id="modal-img" src="" alt="Porsche Model" class="w-full h-full object-cover object-center" />
+        </div>
+
+        <div>
+          <h4 id="modal-tagline" class="font-headline text-lg font-bold text-[#F5F5F2]"></h4>
+          <p id="modal-description" class="mt-2 text-sm text-[#A3A3A3] leading-relaxed"></p>
+        </div>
+
+        <!-- Technical Specification Matrix -->
+        <div>
+          <h5 class="text-[11px] font-headline font-bold uppercase tracking-widest text-[#777777] mb-4">Official Verified Specifications</h5>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 p-5 bg-[#141414] border border-white/10">
+            <div>
+              <span class="block text-[10px] font-mono text-[#666666] uppercase">0–100 KM/H</span>
+              <span id="modal-spec-accel" class="font-headline font-bold text-base text-white"></span>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-[#666666] uppercase">MAXIMUM POWER</span>
+              <span id="modal-spec-power" class="font-headline font-bold text-base text-white"></span>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-[#666666] uppercase">TOP SPEED</span>
+              <span id="modal-spec-speed" class="font-headline font-bold text-base text-white"></span>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-[#666666] uppercase">ENGINE / MOTOR</span>
+              <span id="modal-spec-engine" class="font-headline font-bold text-xs text-white"></span>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-[#666666] uppercase">TRANSMISSION</span>
+              <span id="modal-spec-trans" class="font-headline font-bold text-xs text-white"></span>
+            </div>
+            <div>
+              <span class="block text-[10px] font-mono text-[#666666] uppercase">AERODYNAMICS</span>
+              <span id="modal-spec-downforce" class="font-headline font-bold text-xs text-white"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Highlights List -->
+        <div>
+          <h5 class="text-[11px] font-headline font-bold uppercase tracking-widest text-[#777777] mb-3">Engineering Highlights</h5>
+          <ul id="modal-highlights" class="space-y-2.5"></ul>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-6 md:p-8 border-t border-white/10 bg-[#121212] flex flex-wrap items-center justify-between gap-4">
+        <span class="text-xs font-mono text-white/50">Factory Delivery: Zuffenhausen & Leipzig</span>
+        <div class="flex items-center gap-4">
+          <button id="modal-book-action" class="btn-primary text-xs py-3 px-6">
+            <span>Arrange Viewing For This Model</span>
+            <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================================
+       5. MOTORSPORT HERITAGE SECTION
+       Porsche racing heritage (Le Mans 19 victories, Nürburgring 24h, 963 LMDh,
+       GT3 R). Strictly NO misleading F1 constructor branding.
+       ===================================================================== -->
+  <section id="motorsport" class="py-32 px-6 md:px-12 bg-[#080808] border-t border-b border-white/10 relative">
+    
+    <div class="ghost-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
+      LE MANS // 19
+    </div>
+
+    <div class="max-w-[1720px] mx-auto relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-5">
+          <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-3">
+            04 // MOTORSPORT PEDIGREE
+          </span>
+          <h2 class="font-headline text-3xl sm:text-5xl font-black tracking-tight text-[#F5F5F2] leading-[1.02]">
+            Born from the pursuit of performance.
+          </h2>
+          <p class="mt-6 text-sm sm:text-base text-[#A3A3A3] font-body leading-relaxed">
+            Motorsport is more than a destination. It is a proving ground for precision, innovation, and the pursuit of better. From the Circuit de la Sarthe to the Green Hell of the Nürburgring, racing is encoded into every road-going Porsche.
+          </p>
+
+          <!-- Racing Credentials Matrix -->
+          <div class="mt-12 grid grid-cols-2 gap-8 pt-8 border-t border-white/10">
+            <div>
+              <span class="font-headline text-3xl sm:text-4xl font-black text-white tracking-tight">19</span>
+              <span class="block text-[11px] font-headline font-bold uppercase tracking-widest text-[#777777] mt-1">Le Mans Overall Victories</span>
+              <p class="text-[11px] text-[#555555] mt-0.5">All-time historical record</p>
+            </div>
+            <div>
+              <span class="font-headline text-3xl sm:text-4xl font-black text-white tracking-tight">30,000+</span>
+              <span class="block text-[11px] font-headline font-bold uppercase tracking-widest text-[#777777] mt-1">Race Victories Worldwide</span>
+              <p class="text-[11px] text-[#555555] mt-0.5">Across endurance & GT championships</p>
+            </div>
+            <div>
+              <span class="font-headline text-3xl sm:text-4xl font-black text-white tracking-tight">9,000</span>
+              <span class="block text-[11px] font-headline font-bold uppercase tracking-widest text-[#777777] mt-1">RPM Atmospheric Redline</span>
+              <p class="text-[11px] text-[#555555] mt-0.5">Direct mechanical valve drive</p>
+            </div>
+            <div>
+              <span class="font-headline text-3xl sm:text-4xl font-black text-white tracking-tight">860 KG</span>
+              <span class="block text-[11px] font-headline font-bold uppercase tracking-widest text-[#777777] mt-1">Downforce @ 285 km/h</span>
+              <p class="text-[11px] text-[#555555] mt-0.5">Active aerodynamic balance</p>
+            </div>
+          </div>
+
+          <div class="mt-12">
+            <a href="#telemetry" class="btn-secondary">
+              <span>Read the Telemetry</span>
+              <i data-lucide="gauge" class="w-4 h-4 text-[#D5001C]"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="relative w-full aspect-[16/10] bg-black border border-white/10 overflow-hidden group">
+            <img 
+              src="assets/motorsport-963.jpg" 
+              alt="Porsche Penske Motorsport 963 LMDh Hypercar at 24 Hours of Le Mans" 
+              class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-103"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-70"></div>
+            <div class="absolute bottom-6 left-6 right-6 flex items-end justify-between">
+              <div>
+                <span class="text-[9px] font-mono uppercase tracking-widest text-[#D5001C] bg-black/80 px-2 py-0.5 border border-white/10">FIA WEC & IMSA HYPERCAR</span>
+                <h4 class="font-headline text-lg font-bold text-white mt-1">Porsche 963 LMDh Prototype</h4>
+              </div>
+              <span class="text-[11px] font-mono text-white/60">4.6L Twin-Turbo V8 Hybrid</span>
+            </div>
+          </div>
+
+          <!-- Secondary Grid of Track Close-ups -->
+          <div class="grid grid-cols-2 gap-6">
+            <div class="relative aspect-[16/10] bg-black border border-white/10 overflow-hidden">
+              <img 
+                src="assets/motorsport-track.jpg" 
+                alt="Dunlop Chicane Le Mans" 
+                class="w-full h-full object-cover object-center" 
+                loading="lazy" 
+              />
+              <div class="absolute bottom-3 left-3 bg-black/70 px-2 py-1 text-[9px] font-mono text-white/80 border border-white/10">
+                DUNLOP CHICANE · CIRCUIT DE LA SARTHE
+              </div>
+            </div>
+            <div class="relative aspect-[16/10] bg-[#0f0f0f] border border-white/10 p-6 flex flex-col justify-between">
+              <div>
+                <span class="text-[9px] font-mono text-[#D5001C] tracking-widest uppercase">ENDURANCE PHILOSOPHY</span>
+                <h5 class="font-headline text-sm md:text-base font-bold text-white mt-1">From Weissach to the Paddock</h5>
+              </div>
+              <p class="text-xs text-[#A3A3A3] leading-relaxed">
+                Every material compound tested in 24-hour endurance trials directly feeds the road car division.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       6. PERFORMANCE — DASHBOARD-INSPIRED SECTION
+       Inspired by "Read it like the dash" from Reference 1:
+       Dark technical layout, large numbers, fine dividing lines, minimal labels,
+       digital tachometer arc with 7 LED shift lights, DRS Wing toggle & TPMS.
+       ===================================================================== -->
+  <section id="telemetry" class="py-32 px-6 md:px-12 bg-[#050505] border-b border-white/10 relative">
+    
+    <div class="ghost-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25">
+      INSTRUMENT CLUSTER
+    </div>
+
+    <div class="max-w-[1720px] mx-auto relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+        <div>
+          <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-2">
+            05 // TELEMETRY PROJECTION
+          </span>
+          <h2 class="font-headline text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#F5F5F2]">
+            Performance, in its purest numbers.
+          </h2>
+        </div>
+
+        <!-- Model Telemetry Switcher -->
+        <div class="flex flex-wrap items-center gap-2">
+          <button class="telemetry-tab-btn active px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white text-white bg-white/10 transition-all" data-model="gt3-rs">
+            911 GT3 RS
+          </button>
+          <button class="telemetry-tab-btn px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white/10 text-[#A3A3A3] hover:text-white hover:border-white/30 transition-all" data-model="taycan-gt">
+            Taycan Turbo GT
+          </button>
+          <button class="telemetry-tab-btn px-4 py-2 text-xs font-headline font-bold uppercase tracking-widest border border-white/10 text-[#A3A3A3] hover:text-white hover:border-white/30 transition-all" data-model="carrera-gts">
+            911 Carrera GTS
+          </button>
+        </div>
+      </div>
+
+      <!-- Dashboard Telemetry Console -->
+      <div class="mt-14 bg-[#0a0a0a] border border-white/15 p-6 md:p-12 relative overflow-hidden shadow-2xl">
+        
+        <!-- Dashboard Top Header Bar -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-8 border-b border-white/10 gap-4">
+          <div class="flex items-center gap-4">
+            <span class="w-3 h-3 rounded-full bg-[#D5001C] animate-pulse"></span>
+            <div>
+              <h3 id="dash-model-title" class="font-headline text-xl md:text-2xl font-bold text-white tracking-tight">Porsche 911 GT3 RS</h3>
+              <span id="dash-model-code" class="text-xs font-mono text-white/50">Type 992 · Weissach Package</span>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-6">
+            <!-- DRS Wing Mode Interactive Toggle Button -->
+            <button id="dash-drs-toggle" class="inline-flex items-center gap-2 px-3.5 py-1.5 text-[10px] font-mono uppercase tracking-widest border border-white/20 hover:border-white text-white bg-black/60 transition-all cursor-pointer">
+              <i data-lucide="wind" class="w-3.5 h-3.5 text-[#D5001C]"></i>
+              <span id="dash-drs-status">HIGH DOWNFORCE (860 KG)</span>
+            </button>
+
+            <div class="text-left sm:text-right">
+              <span class="dash-label">DRIVETRAIN ARCHITECTURE</span>
+              <span id="dash-drivetrain" class="block font-mono text-xs md:text-sm text-white font-medium mt-0.5">Atmospheric Flat-6 · Rear-Wheel Drive</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shift Light LED Sequence Bar -->
+        <div class="pt-6 pb-2 flex items-center justify-center gap-2">
+          <span class="text-[8px] font-mono text-white/40 uppercase tracking-widest mr-2">REV SHIFT MATRIX:</span>
+          <span class="shift-led green"></span>
+          <span class="shift-led green"></span>
+          <span class="shift-led amber"></span>
+          <span class="shift-led amber"></span>
+          <span class="shift-led red"></span>
+          <span class="shift-led red"></span>
+          <span class="shift-led red"></span>
+          <span class="text-[8px] font-mono text-[#D5001C] uppercase tracking-widest ml-2">9,000 RPM FLASH</span>
+        </div>
+
+        <!-- Main Dashboard 3-Column Telemetry Display -->
+        <div class="py-12 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 items-center">
+          
+          <!-- Column 1: Acceleration 0-100 -->
+          <div class="md:border-r md:border-white/10 md:pr-8 flex flex-col justify-center">
+            <span class="dash-label">ACCELERATION 0–100 KM/H</span>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span id="dash-val-accel" class="dash-digit text-6xl sm:text-7xl lg:text-8xl text-white">3.2</span>
+              <span class="font-headline text-xl text-[#D5001C] font-bold">s</span>
+            </div>
+            <span id="dash-unit-accel" class="dash-unit mt-2">SECONDS WITH LAUNCH CONTROL</span>
+            <p class="mt-4 text-xs text-[#777777] leading-relaxed">
+              Achieved via 7-speed dual-clutch transmission with instantaneous millisecond pre-selection.
+            </p>
+          </div>
+
+          <!-- Column 2: Digital Tachometer / Power Arc -->
+          <div class="flex flex-col items-center justify-center text-center px-4">
+            <div class="relative w-60 h-60 sm:w-72 sm:h-72 flex items-center justify-center">
+              
+              <!-- Circular SVG Gauge Arc -->
+              <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5" stroke-dasharray="283" stroke-dashoffset="0"/>
+                <circle id="dash-gauge-arc" cx="50" cy="50" r="45" fill="none" stroke="#D5001C" stroke-width="5" stroke-dasharray="283" stroke-dashoffset="20" stroke-linecap="round" class="transition-all duration-700 ease-out"/>
+              </svg>
+
+              <!-- Central Power Readout & Gear Indicator -->
+              <div class="absolute inset-0 flex flex-col items-center justify-center">
+                <span class="px-2 py-0.5 text-[9px] font-mono bg-white/10 text-white rounded mb-1">GEAR: 7-PDK</span>
+                <span class="dash-label text-[9px]">MAXIMUM OUTPUT</span>
+                <span id="dash-val-power" class="dash-digit text-4xl sm:text-5xl font-bold text-white mt-0.5">525</span>
+                <span id="dash-unit-power" class="dash-unit text-xs text-[#D5001C] font-bold">PS (386 KW)</span>
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <span class="text-[10px] font-mono text-white/50 uppercase tracking-widest">PEAK ROTATIONAL FREQUENCY:</span>
+              <span id="dash-val-redline" class="font-mono text-xs text-white font-bold ml-1">9,000</span>
+              <span id="dash-unit-redline" class="text-[10px] font-mono text-white/50 ml-0.5">RPM</span>
+            </div>
+          </div>
+
+          <!-- Column 3: Top Track Speed -->
+          <div class="md:border-l md:border-white/10 md:pl-8 flex flex-col justify-center">
+            <span class="dash-label">TOP TRACK SPEED</span>
+            <div class="mt-3 flex items-baseline gap-2">
+              <span id="dash-val-speed" class="dash-digit text-6xl sm:text-7xl lg:text-8xl text-white">296</span>
+              <span class="font-headline text-xl text-[#D5001C] font-bold">km/h</span>
+            </div>
+            <span id="dash-unit-speed" class="dash-unit mt-2">V-MAX ON CLOSED CIRCUIT</span>
+            <p class="mt-4 text-xs text-[#777777] leading-relaxed">
+              Aerodynamically balanced with active rear wing and central single-radiator cooling architecture.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Dashboard Bottom Secondary Telemetry Matrix -->
+        <div class="pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 text-left">
+          <div>
+            <span class="dash-label">AERODYNAMIC DOWNFORCE</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="dash-val-downforce" class="font-headline text-lg sm:text-xl font-bold text-white">860</span>
+              <span class="text-xs font-mono text-[#D5001C]">kg</span>
+            </div>
+            <span id="dash-unit-downforce" class="text-[10px] font-mono text-[#666666]">@ 285 KM/H</span>
+          </div>
+
+          <div>
+            <span class="dash-label">LATERAL ACCELERATION</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="dash-val-lateralg" class="font-headline text-lg sm:text-xl font-bold text-white">1.85</span>
+              <span class="text-xs font-mono text-[#D5001C]">G</span>
+            </div>
+            <span id="dash-unit-lateralg" class="text-[10px] font-mono text-[#666666]">MAX CORNERING FORCE</span>
+          </div>
+
+          <div>
+            <span class="dash-label">TPMS FRONT AXLE</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="dash-tpms-front" class="font-mono text-sm sm:text-base font-bold text-white">31.5 PSI · 38°C</span>
+            </div>
+            <span class="text-[10px] font-mono text-[#666666]">275/35 R20 MICHELIN CUP 2 R</span>
+          </div>
+
+          <div>
+            <span class="dash-label">TPMS REAR AXLE</span>
+            <div class="flex items-baseline gap-1 mt-1">
+              <span id="dash-tpms-rear" class="font-mono text-sm sm:text-base font-bold text-white">33.0 PSI · 42°C</span>
+            </div>
+            <span class="text-[10px] font-mono text-[#666666]">335/30 R21 MICHELIN CUP 2 R</span>
+          </div>
+        </div>
+
+        <!-- Engineering Modal Trigger Button -->
+        <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <span class="text-xs font-mono text-[#666666]">ENGINEERED AT WEISSACH MOTORSPORT DEVELOPMENT CENTRE</span>
+          <button id="dash-explore-btn" class="btn-primary text-xs py-2.5 px-6">
+            <span>Explore the engineering</span>
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Engineering Breakdown Modal -->
+  <div id="engineering-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 md:p-8">
+    <div id="eng-modal-backdrop" class="absolute inset-0 bg-black/92 backdrop-blur-2xl"></div>
+    <div class="relative z-10 w-full max-w-3xl bg-[#101010] border border-white/20 overflow-hidden flex flex-col shadow-2xl p-6 md:p-10">
+      <div class="flex items-center justify-between pb-6 border-b border-white/10">
+        <div>
+          <span class="text-[10px] font-mono text-[#D5001C] tracking-widest uppercase">WEISSACH DEVELOPMENT CENTRE</span>
+          <h3 class="font-headline text-2xl font-bold text-white mt-1">Porsche Engineering Architecture</h3>
+        </div>
+        <button id="eng-modal-close" class="p-2 text-white/60 hover:text-white" aria-label="Close Modal">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <div class="py-6 space-y-6 text-sm text-[#A3A3A3] leading-relaxed">
+        <div>
+          <h4 class="font-headline text-base font-bold text-white">1. Central Single-Radiator Concept</h4>
+          <p class="mt-1 text-xs">Directly adopted from the 911 RSR and 963 Le Mans race cars. Instead of three radiators, a large angled center radiator in the nose frees up side space for active aerodynamic elements.</p>
+        </div>
+        <div>
+          <h4 class="font-headline text-base font-bold text-white">2. Drag Reduction System (DRS)</h4>
+          <p class="mt-1 text-xs">For the first time on a road-legal Porsche, DRS flattens the wings within milliseconds at the touch of a button on the steering wheel, reducing drag for higher straight-line velocities.</p>
+        </div>
+        <div>
+          <h4 class="font-headline text-base font-bold text-white">3. Double-Wishbone Front Axle with Teardrop Profiles</h4>
+          <p class="mt-1 text-xs">Because the wheel arches are subjected to powerful airflows, the double-wishbone suspension links are shaped as aerodynamic teardrop profiles, generating up to 40 kg of front downforce at top speed.</p>
+        </div>
+      </div>
+
+      <div class="pt-6 border-t border-white/10 flex justify-end">
+        <a href="#private-viewing" class="btn-primary text-xs py-2.5 px-6">
+          <span>Arrange Engineering Consultation</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- =====================================================================
+       7. INTERACTIVE PORSCHE COLOUR CONFIGURATOR
+       Headline: “A colour of your own.”
+       Top-down / overhead view of Porsche 911 GT3 RS on dark studio backdrop.
+       6 clickable colour swatches with smooth crossfade and profile angle toggle.
+       ===================================================================== -->
+  <section id="configurator" class="py-32 px-6 md:px-12 bg-[#050505] relative">
+    
+    <div class="ghost-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25">
+      EXCLUSIVE MANUFAKTUR
+    </div>
+
+    <div class="max-w-[1720px] mx-auto relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+        <div>
+          <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-2">
+            06 // EXCLUSIVE MANUFAKTUR ATELIER
+          </span>
+          <h2 class="font-headline text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#F5F5F2]">
+            A colour of your own.
+          </h2>
+        </div>
+        <p class="text-sm md:text-base text-[#A3A3A3] font-body max-w-md leading-relaxed">
+          Choose the finish that reflects your character. Explore our curated palette rendered under controlled studio lighting with authentic metallic clearcoat physics.
+        </p>
+      </div>
+
+      <!-- Configurator Studio Stage Container -->
+      <div class="mt-12 bg-[#080808] border border-white/15 p-6 md:p-12 relative overflow-hidden shadow-2xl">
+        
+        <!-- View Angle Controls & Active Spec Strip -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-white/10">
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-headline font-bold uppercase tracking-widest text-[#777777]">VIEW ANGLE:</span>
+            <div class="inline-flex p-1 bg-[#121212] border border-white/10">
+              <button class="config-view-btn active px-4 py-2 text-[11px] font-headline font-bold uppercase tracking-wider text-white bg-white/10 border border-white transition-all" data-angle="overhead">
+                Overhead Aero View
+              </button>
+              <button class="config-view-btn px-4 py-2 text-[11px] font-headline font-bold uppercase tracking-wider text-[#A3A3A3] hover:text-white border border-transparent transition-all" data-angle="profile">
+                Studio Profile
+              </button>
+            </div>
+          </div>
+
+          <!-- Color Meta Details -->
+          <div class="flex items-center gap-3">
+            <span id="config-color-type" class="text-[10px] font-mono uppercase tracking-widest px-3 py-1 bg-white/10 text-white/90 border border-white/10">
+              SOLID
+            </span>
+            <span id="config-color-code" class="text-xs font-mono text-white/50 tracking-wider">
+              CODE G1
+            </span>
+          </div>
+        </div>
+
+        <!-- Large High-Quality Studio Viewport -->
+        <div class="relative w-full aspect-[16/9] md:aspect-[21/9] my-8 flex items-center justify-center overflow-hidden bg-[#070707]">
+          <!-- Active Vehicle Viewport -->
+          <div id="configurator-viewport" class="relative w-full h-full">
+            <!-- Dynamically populated with crossfading SVG views -->
+          </div>
+        </div>
+
+        <!-- Configurator Bottom Controls: Swatches & Actions -->
+        <div class="pt-8 border-t border-white/10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          
+          <!-- Selected Color Text & Swatches -->
+          <div>
+            <div class="flex items-baseline gap-3 mb-4">
+              <span class="text-xs font-mono text-[#666666] uppercase tracking-wider">FINISH:</span>
+              <h4 id="config-color-name" class="font-headline text-xl md:text-2xl font-bold text-white tracking-tight">
+                Guards Red
+              </h4>
+            </div>
+            
+            <!-- Clickable Swatches (All 6 Porsche Colors) -->
+            <div id="configurator-swatches" class="flex items-center gap-4">
+              <!-- Dynamically populated by configurator.js -->
+            </div>
+          </div>
+
+          <!-- Color Description & Actions -->
+          <div class="lg:max-w-md flex flex-col justify-between">
+            <p id="config-color-desc" class="text-xs text-[#A3A3A3] leading-relaxed line-clamp-2">
+              The defining racing red of Porsche motorsport since the 1970s. Vibrant, uncompromising, and deeply rooted in endurance victory.
+            </p>
+
+            <div class="mt-6 flex flex-wrap items-center gap-4">
+              <button id="config-copy-btn" class="btn-secondary text-xs py-3 px-6">
+                <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                <span>Copy Specification Code</span>
+              </button>
+              <button id="config-book-btn" class="btn-primary text-xs py-3 px-6">
+                <span>Request in This Finish</span>
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       8. DESIGN DETAILS / CRAFTSMANSHIP
+       Close-up editorial section showcasing headlights, wheel design,
+       interior Race-Tex/carbon, steering wheel, swan-neck wing, and rear light.
+       Headline: “Every detail has a purpose.”
+       ===================================================================== -->
+  <section id="craftsmanship" class="py-32 px-6 md:px-12 bg-[#080808] border-t border-b border-white/10 relative">
+    
+    <div class="ghost-watermark top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
+      CRAFTSMANSHIP
+    </div>
+
+    <div class="max-w-[1720px] mx-auto relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-white/10">
+        <div>
+          <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-2">
+            07 // CRAFTSMANSHIP & DETAILS
+          </span>
+          <h2 class="font-headline text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#F5F5F2]">
+            Every detail has a purpose.
+          </h2>
+        </div>
+        <p class="text-sm md:text-base text-[#A3A3A3] font-body max-w-md leading-relaxed">
+          At Porsche, form does not merely follow function. Form and function exist in absolute indivisible harmony. Explore the meticulous details engineered into every component.
+        </p>
+      </div>
+
+      <!-- 6-Item Editorial Craftsmanship Grid -->
+      <div id="craftsmanship-grid" class="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        <!-- Dynamically rendered by craftsmanship.js -->
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       9. PRIVATE VIEWING SECTION
+       Inspired by "Book a private viewing" from Reference 1:
+       Headline: “Experience Porsche, in person.”
+       Supported by concierge info, interactive booking request form,
+       validation, VIP reference generation, and .ics calendar invite.
+       ===================================================================== -->
+  <section id="private-viewing" class="py-32 px-6 md:px-12 bg-[#050505] relative">
+    
+    <div class="ghost-watermark top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-25">
+      VIP VIEWING
+    </div>
+
+    <div class="max-w-[1720px] mx-auto relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Editorial Column -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
+            <span class="text-[10px] md:text-xs font-mono uppercase tracking-[0.25em] text-[#D5001C] block mb-3">
+              08 // CONCIERGE APPOINTMENTS
+            </span>
+            <h2 class="font-headline text-3xl sm:text-5xl font-black tracking-tight text-[#F5F5F2] leading-[1.02]">
+              Experience Porsche, in person.
+            </h2>
+            <p class="mt-6 text-sm sm:text-base text-[#A3A3A3] font-body leading-relaxed">
+              Some things are better understood from behind the wheel. Arrange a private viewing and discover the details that make each Porsche extraordinary.
+            </p>
+          </div>
+
+          <!-- Experience Centre Imagery & Lounge Card -->
+          <div class="relative aspect-[16/10] bg-black border border-white/10 overflow-hidden shadow-2xl">
+            <img 
+              src="assets/viewing-lounge.jpg" 
+              alt="Porsche Experience Centre VIP Consultation Lounge" 
+              class="w-full h-full object-cover object-center" 
+              loading="lazy" 
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+            <div class="absolute bottom-6 left-6 right-6">
+              <span class="text-[9px] font-mono text-[#D5001C] uppercase tracking-widest">EXCLUSIVE MANUFAKTUR LOUNGE</span>
+              <h4 class="font-headline text-base font-bold text-white mt-1">Stuttgart-Zuffenhausen VIP Suite</h4>
+              <p class="text-xs text-white/60 mt-0.5">Private dynamic briefing & material sample atelier</p>
+            </div>
+          </div>
+
+          <!-- Private Viewing Privileges List -->
+          <div class="p-8 bg-[#0c0c0c] border border-white/10 space-y-5">
+            <h5 class="text-xs font-headline font-bold uppercase tracking-widest text-white">Private Viewing Privileges</h5>
+            <ul class="space-y-3.5 text-xs text-[#A3A3A3]">
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-[#D5001C] flex-shrink-0 mt-0.5"></i>
+                <span>One-on-one session with a certified Porsche Pro vehicle specialist</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-[#D5001C] flex-shrink-0 mt-0.5"></i>
+                <span>Tailored specification consultation in the Exclusive Manufaktur atelier</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <i data-lucide="check" class="w-4 h-4 text-[#D5001C] flex-shrink-0 mt-0.5"></i>
+                <span>Closed-course dynamic orientation session (subject to availability)</span>
+              </li>
+            </ul>
+
+            <div class="pt-5 border-t border-white/10 flex items-center justify-between text-xs font-mono text-[#666666]">
+              <span>Direct Concierge:</span>
+              <span class="text-white font-bold">+49 (0) 711 911-0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Enquiry Form & Confirmation Card -->
+        <div class="lg:col-span-7">
+          
+          <!-- 1. The Interactive Form -->
+          <div id="form-card-container" class="bg-[#0c0c0c] border border-white/15 p-8 md:p-12 shadow-2xl">
+            <div class="pb-6 border-b border-white/10 mb-8">
+              <h3 class="font-headline text-xl md:text-2xl font-bold text-white">Request a Private Viewing</h3>
+              <p class="text-xs text-[#A3A3A3] mt-1.5">Complete the details below. Our concierge team will review your requested time and contact you directly to finalize your private appointment.</p>
+            </div>
+
+            <form id="private-viewing-form" class="space-y-6" novalidate>
+              
+              <!-- Row 1: Full Name & Email -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="pv-name" class="input-label">Full Name *</label>
+                  <input type="text" id="pv-name" name="name" placeholder="e.g. Dr. Alexander Weber" class="luxury-input" required />
+                  <div id="pv-name-err"></div>
+                </div>
+                <div>
+                  <label for="pv-email" class="input-label">Email Address *</label>
+                  <input type="email" id="pv-email" name="email" placeholder="concierge@example.com" class="luxury-input" required />
+                  <div id="pv-email-err"></div>
+                </div>
+              </div>
+
+              <!-- Row 2: Phone Number & Preferred Model -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="pv-phone" class="input-label">Phone Number *</label>
+                  <input type="tel" id="pv-phone" name="phone" placeholder="+49 170 1234567" class="luxury-input" required />
+                  <div id="pv-phone-err"></div>
+                </div>
+                <div>
+                  <label for="pv-model" class="input-label">Preferred Porsche Model *</label>
+                  <select id="pv-model" name="model" class="luxury-input cursor-pointer">
+                    <option value="Porsche 911 GT3 RS">Porsche 911 GT3 RS</option>
+                    <option value="Porsche 911 Carrera GTS">Porsche 911 Carrera GTS</option>
+                    <option value="Porsche 718 Cayman GT4 RS">Porsche 718 Cayman GT4 RS</option>
+                    <option value="Porsche Taycan Turbo GT">Porsche Taycan Turbo GT</option>
+                    <option value="Porsche Panamera Turbo E-Hybrid">Porsche Panamera Turbo E-Hybrid</option>
+                    <option value="Porsche Cayenne Turbo GT">Porsche Cayenne Turbo GT</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Row 3: Preferred Location & Date -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label for="pv-centre" class="input-label">Porsche Experience Centre *</label>
+                  <select id="pv-centre" name="centre" class="luxury-input cursor-pointer">
+                    <option value="Porsche Experience Centre Stuttgart-Zuffenhausen">Stuttgart-Zuffenhausen (Germany)</option>
+                    <option value="Porsche Experience Centre Silverstone">Silverstone Circuit (UK)</option>
+                    <option value="Porsche Experience Centre Leipzig">Leipzig Factory Track (Germany)</option>
+                    <option value="Porsche Experience Centre Atlanta">Atlanta (USA)</option>
+                    <option value="Porsche Experience Centre Los Angeles">Los Angeles (USA)</option>
+                    <option value="Porsche Experience Centre Tokyo">Tokyo (Japan)</option>
+                    <option value="Porsche Experience Centre Hockenheimring">Hockenheimring (Germany)</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="pv-date" class="input-label">Preferred Date *</label>
+                  <input type="date" id="pv-date" name="date" class="luxury-input cursor-pointer" required />
+                  <div id="pv-date-err"></div>
+                </div>
+              </div>
+
+              <!-- Row 4: Preferred Time Slot -->
+              <div>
+                <label for="pv-time" class="input-label">Preferred Time Slot *</label>
+                <select id="pv-time" name="time" class="luxury-input cursor-pointer">
+                  <option value="morning">Morning Session · 10:00 – 12:30 CET</option>
+                  <option value="afternoon">Afternoon Session · 14:00 – 16:30 CET</option>
+                  <option value="twilight">Twilight VIP Trackside · 17:00 – 19:30 CET</option>
+                </select>
+              </div>
+
+              <!-- Row 5: Message (Optional) -->
+              <div>
+                <label for="pv-message" class="input-label">Personal Notes / Specific Requests (Optional)</label>
+                <textarea id="pv-message" name="message" rows="3" placeholder="Specific aerodynamic options, paint-to-sample interests, or track configuration requests..." class="luxury-input"></textarea>
+              </div>
+
+              <!-- Submit CTA Button -->
+              <div class="pt-4">
+                <button type="submit" id="pv-submit-btn" class="btn-primary w-full py-4 text-xs font-bold tracking-luxury">
+                  <span>Request a Private Viewing</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+                <p class="text-[10px] text-[#666666] text-center mt-3">
+                  This form submits a reservation enquiry. Our private client team will confirm vehicle availability and appointment schedule.
+                </p>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- 2. Luxury Confirmation Card (Hidden by default, shown upon valid submission) -->
+          <div id="viewing-success-card" class="hidden bg-[#0c0c0c] border border-[#D5001C] p-8 md:p-12 shadow-2xl">
+            <div class="flex items-center gap-3 pb-6 border-b border-white/10">
+              <div class="w-10 h-10 rounded-full bg-[#D5001C]/20 border border-[#D5001C] flex items-center justify-center text-[#D5001C]">
+                <i data-lucide="check" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <span class="text-[10px] font-mono text-[#D5001C] uppercase tracking-widest">ENQUIRY TRANSMITTED</span>
+                <h3 class="font-headline text-xl md:text-2xl font-bold text-white">Private Viewing Request Received</h3>
+              </div>
+            </div>
+
+            <p class="mt-6 text-sm text-[#A3A3A3] leading-relaxed">
+              Thank you for your interest in experiencing Porsche. Your viewing request has been received by our private client concierge team. A dedicated Porsche Pro specialist will contact you directly within 24 business hours to confirm your tailored itinerary.
+            </p>
+
+            <!-- Appointment Details Summary -->
+            <div class="mt-8 p-6 bg-[#141414] border border-white/10 space-y-4 text-xs">
+              <div class="flex justify-between border-b border-white/5 pb-2">
+                <span class="text-[#777777] uppercase font-mono">VIP Reference:</span>
+                <span id="success-ref-id" class="font-mono text-white font-bold"></span>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2">
+                <span class="text-[#777777] uppercase font-mono">Selected Model:</span>
+                <span id="success-model" class="font-headline text-white font-bold"></span>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2">
+                <span class="text-[#777777] uppercase font-mono">Location:</span>
+                <span id="success-centre" class="text-white"></span>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2">
+                <span class="text-[#777777] uppercase font-mono">Requested Date:</span>
+                <span id="success-date" class="text-white"></span>
+              </div>
+              <div class="flex justify-between border-b border-white/5 pb-2">
+                <span class="text-[#777777] uppercase font-mono">Session Slot:</span>
+                <span id="success-time" class="text-white"></span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-[#777777] uppercase font-mono">Confirmation Email:</span>
+                <span id="success-email" class="text-white"></span>
+              </div>
+            </div>
+
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <button id="download-ics-btn" class="btn-primary text-xs py-3 px-6">
+                <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+                <span>Download Calendar Card (.ics)</span>
+              </button>
+              <button id="reset-viewing-form-btn" class="btn-secondary text-xs py-3 px-6">
+                <span>Submit Another Request</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =====================================================================
+       10. FOOTER
+       Minimal dark luxury footer with Porsche wordmark, models, motorsport,
+       private viewing, contact, social links, legal & WLTP disclosures.
+       ===================================================================== -->
+  <footer id="footer" class="bg-[#050505] border-t border-white/10 pt-24 pb-12 px-6 md:px-12 text-[#A3A3A3]">
+    <div class="max-w-[1720px] mx-auto">
+      
+      <!-- Top Brand Row -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between pb-12 border-b border-white/10 gap-6">
+        <div>
+          <span class="font-headline text-2xl md:text-3xl font-extrabold tracking-[0.28em] text-[#F5F5F2] uppercase block">
+            PORSCHE
+          </span>
+          <span class="text-xs font-mono text-white/50 tracking-widest mt-1 block">
+            DR. ING. H.C. F. PORSCHE AG · STUTTGART-ZUFFENHAUSEN
+          </span>
+        </div>
+
+        <div class="flex items-center gap-6">
+          <a href="https://instagram.com/porsche" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Porsche Instagram">
+            <i data-lucide="instagram" class="w-5 h-5"></i>
+          </a>
+          <a href="https://youtube.com/porsche" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Porsche YouTube">
+            <i data-lucide="youtube" class="w-5 h-5"></i>
+          </a>
+          <a href="https://twitter.com/porsche" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Porsche X">
+            <i data-lucide="twitter" class="w-5 h-5"></i>
+          </a>
+          <a href="https://linkedin.com/company/porsche-ag" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" aria-label="Porsche LinkedIn">
+            <i data-lucide="linkedin" class="w-5 h-5"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Columns -->
+      <div class="py-16 grid grid-cols-2 md:grid-cols-4 gap-10 text-xs">
+        <div>
+          <h5 class="font-headline text-white font-bold uppercase tracking-widest mb-4">Models</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#collection" class="hover:text-white transition-colors">911 GT3 RS</a></li>
+            <li><a href="#collection" class="hover:text-white transition-colors">911 Carrera GTS</a></li>
+            <li><a href="#collection" class="hover:text-white transition-colors">718 Cayman GT4 RS</a></li>
+            <li><a href="#collection" class="hover:text-white transition-colors">Taycan Turbo GT</a></li>
+            <li><a href="#collection" class="hover:text-white transition-colors">Panamera Turbo E-Hybrid</a></li>
+            <li><a href="#collection" class="hover:text-white transition-colors">Cayenne Turbo GT</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-headline text-white font-bold uppercase tracking-widest mb-4">Motorsport</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#motorsport" class="hover:text-white transition-colors">Porsche Penske Motorsport</a></li>
+            <li><a href="#motorsport" class="hover:text-white transition-colors">Porsche 963 LMDh Hypercar</a></li>
+            <li><a href="#motorsport" class="hover:text-white transition-colors">24 Hours of Le Mans (19 Wins)</a></li>
+            <li><a href="#motorsport" class="hover:text-white transition-colors">Porsche Carrera Cup</a></li>
+            <li><a href="#motorsport" class="hover:text-white transition-colors">Porsche Motorsport GT3 R</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-headline text-white font-bold uppercase tracking-widest mb-4">Experience & Atelier</h5>
+          <ul class="space-y-2.5">
+            <li><a href="#configurator" class="hover:text-white transition-colors">Exclusive Manufaktur</a></li>
+            <li><a href="#private-viewing" class="hover:text-white transition-colors">Porsche Experience Centres</a></li>
+            <li><a href="#private-viewing" class="hover:text-white transition-colors">Arrange Private Viewing</a></li>
+            <li><a href="#craftsmanship" class="hover:text-white transition-colors">Weissach Aerodynamics</a></li>
+            <li><a href="#private-viewing" class="hover:text-white transition-colors">Porsche Track Experience</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h5 class="font-headline text-white font-bold uppercase tracking-widest mb-4">Concierge & Legal</h5>
+          <ul class="space-y-2.5">
+            <li><span class="text-white/80">Phone: +49 (0) 711 911-0</span></li>
+            <li><span class="text-white/80">Porscheplatz 1, 70435 Stuttgart</span></li>
+            <li><a href="#private-viewing" class="hover:text-white transition-colors">Privacy Notice</a></li>
+            <li><a href="#private-viewing" class="hover:text-white transition-colors">Legal Disclosure</a></li>
+            <li><a href="#private-viewing" class="hover:text-white transition-colors">Cookie Preferences</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WLTP Emissions Transparency & Copyright -->
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row md:items-center justify-between gap-6 text-[10px] font-mono text-[#555555]">
+        <p class="max-w-3xl leading-relaxed">
+          * Official Fuel Consumption and CO₂ Emissions (WLTP): 911 GT3 RS: Combined fuel consumption 13.4 l/100 km; combined CO₂ emissions 305 g/km. Taycan Turbo GT: Combined power consumption 20.7 kWh/100 km; combined CO₂ emissions 0 g/km. 911 Carrera GTS: Combined fuel consumption 10.5 l/100 km; combined CO₂ emissions 239 g/km.
+        </p>
+
+        <div class="flex items-center gap-6 flex-shrink-0">
+          <span>© 2026 Dr. Ing. h.c. F. Porsche AG.</span>
+          <button id="back-to-top" class="inline-flex items-center gap-1.5 hover:text-white transition-colors text-[10px] font-headline uppercase tracking-widest">
+            <span>Back to top</span>
+            <i data-lucide="chevron-up" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Main ES Module Script -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
